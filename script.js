@@ -19,7 +19,7 @@ const music = document.getElementById("music");
 const btn = document.getElementById("btn");
 const letterContent = document.querySelector(".letter-content p");
 
-// ===== фото появляется мягко =====
+// ===== фото появляется плавно =====
 setTimeout(() => {
   photo.style.opacity = 1;
   photo.style.transform = "scale(1)";
@@ -64,23 +64,18 @@ function typeLetter() {
 
     if (i >= fullText.length) {
       clearInterval(interval);
-
-      // 🔥 финальный эффект после письма
       activateFinalEmotion();
     }
   }, speed);
 }
 
-// ===== финальный эмоциональный эффект =====
+// ===== финальный эффект (сердце оживает) =====
 function activateFinalEmotion() {
-  // ❤️ усиленное сердце
   heart.classList.add("active");
 
-  // 📸 фото становится “живым”
   photo.style.transform = "scale(1.05)";
   photo.style.transition = "1.5s ease";
 
-  // 🌌 фон чуть теплее
   document.body.style.transition = "2s";
   document.body.style.background =
     "radial-gradient(circle at center, rgba(255,60,100,0.15), #000000)";
@@ -94,7 +89,7 @@ btn.onclick = async () => {
     music.volume = 0;
     await music.play();
 
-    // 🎵 плавный fade-in
+    // плавный fade-in звука
     let v = 0;
     const fade = setInterval(() => {
       if (v < 1) {
