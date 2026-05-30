@@ -24,7 +24,7 @@ body::before {
   50% { opacity: 0.8; transform: scale(1.1); }
 }
 
-/* ===== центр ===== */
+/* ===== центр (кинематографический вход) ===== */
 .center {
   height: 100%;
   display: flex;
@@ -42,58 +42,38 @@ body::before {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ===== ❤️ сердце (исправленное, ровное) ===== */
+/* ===== SVG сердце ===== */
 .heart {
   width: 70px;
   height: 70px;
-  background: #ff2b5c;
-  position: relative;
-  margin-bottom: 30px;
+  fill: #ff2b5c;
   cursor: pointer;
-
-  transform: rotate(45deg);
   animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
 }
 
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background: #ff2b5c;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -35px;
-  left: 0;
-}
-
-.heart::after {
-  top: 0;
-  left: 35px;
+.heart:hover {
+  transform: scale(1.1);
 }
 
 @keyframes pulse {
-  0% { transform: rotate(45deg) scale(1); }
-  50% { transform: rotate(45deg) scale(1.1); }
-  100% { transform: rotate(45deg) scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
 }
 
-/* усиление после письма */
 .heart.active {
   animation: pulseStrong 1.2s infinite;
-  box-shadow: 0 0 30px rgba(255, 43, 92, 0.6);
+  filter: drop-shadow(0 0 12px rgba(255,43,92,0.7));
 }
 
 @keyframes pulseStrong {
-  0% { transform: rotate(45deg) scale(1); }
-  50% { transform: rotate(45deg) scale(1.2); }
-  100% { transform: rotate(45deg) scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
-/* ===== фото ===== */
+/* ===== фото (киношный эффект) ===== */
 .photo {
   opacity: 0;
   transform: scale(0.95);
@@ -105,18 +85,17 @@ body::before {
   width: 220px;
   border-radius: 16px;
   animation: float 4s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(255,43,92,0.3);
+  box-shadow: 0 0 15px rgba(255,43,92,0.3);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* hover эффект */
 .photo img:hover {
   transform: scale(1.08);
   box-shadow: 0 0 40px rgba(255,43,92,0.6);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 /* ===== кнопка ===== */
@@ -142,7 +121,6 @@ body::before {
   font-size: 16px;
   color: #ff4d6d;
   text-align: center;
-  opacity: 0.9;
 }
 
 /* ===== футер ===== */
@@ -194,7 +172,6 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* задержки */
 #heart { animation-delay: 0.2s; }
 #photo { animation-delay: 0.7s; }
 #btn { animation-delay: 1.1s; }
