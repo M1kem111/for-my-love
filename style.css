@@ -50,6 +50,7 @@ body::before {
   cursor: pointer;
   animation: pulse 1.5s infinite;
   transition: transform 0.3s ease;
+  margin-bottom: 50px;  /* увеличен отступ до фото */
 }
 
 .heart:hover {
