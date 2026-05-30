@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>❤️ Для моего котеночка ❤️</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>❤️ Для моего котеночка ❤️</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<canvas id="stars"></canvas>
+  <div class="counter" id="counter"></div>
 
-<div id="heart-container"></div>
+  <div class="center">
 
-<div class="center-content">
-<img src="photo.jpg" alt="Любимая" class="photo" id="photo">
-<h1>Я тебя люблю ❤️</h1>
-<p id="timer"></p>
-<button id="playBtn">Наша песня 🎵</button>
-<audio id="music" src="music.mp3"></audio>
-</div>
+    <div class="heart" id="heart"></div>
 
-<div id="letter-modal" class="hidden">
-<div id="letter-content">
-<span id="close-letter">&times;</span>
-<h2>Письмо для тебя ❤️</h2>
-<p>
-Любимая,<br><br>
-Каждый день рядом с тобой делает меня счастливее.<br>
-Ты самое прекрасное, что произошло в моей жизни.<br>
-Ты большая умничка, и я верю в тебя, что всё у тебя получится в такое непростое
-для нас и в особенности для тебя время.<br><br>
-Что бы ни происходило, я всегда буду рядом,
-поддерживать тебя и радоваться каждому твоему успеху.<br><br>
-Я очень сильно тебя люблю ❤️
-</p>
-</div>
-</div>
+    <div class="photo" id="photo">
+      <img src="photo.jpg" alt="photo"/>
+    </div>
 
-<script src="script.js"></script>
+    <button class="btn" id="btn">Наша песня 🎵</button>
+
+  </div>
+
+  <div class="letter" id="letter">
+    <div class="letter-content">
+      <p>
+        Любимая,<br><br>
+        Каждый день рядом с тобой делает меня счастливее.<br>
+        Ты самое прекрасное, что произошло в моей жизни.<br><br>
+        Я всегда буду рядом с тобой, поддерживать тебя и радоваться каждому твоему шагу.<br><br>
+        Я очень сильно тебя люблю ❤️
+      </p>
+    </div>
+  </div>
+
+  <audio id="music" src="song.mp3"></audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
